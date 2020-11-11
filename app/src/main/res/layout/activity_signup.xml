@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/signupText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGNUP"
+            android:textSize="36sp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+        <EditText
+            android:id="@+id/editTextEmail2"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/signupText"
+            android:layout_marginTop="70dp"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:hint="Email"/>
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/editTextEmail2"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:hint="Username"/>
+
+        <EditText
+            android:id="@+id/editTextPassword2"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/editTextUsername"
+            android:layout_marginTop="30dp"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:hint="Password"/>
+        <EditText
+            android:id="@+id/editTextConfirmPassword"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/editTextPassword2"
+            android:layout_marginTop="30dp"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:hint="Confirm Password"/>
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/signupText"
+            android:layout_marginTop="420dp"
+            android:layout_centerHorizontal="true"
+            android:text="Signup"/>
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
