@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dashboard_bgr">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/home_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="true"
+            android:gravity="center">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/pie_chart_cardView"
+                android:layout_width="300dp"
+                android:layout_height="260dp"
+                app:cardElevation="20dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginBottom="20dp">
+
+                <org.eazegraph.lib.charts.PieChart
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/pie_chart_details_cardView"
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp"
+                app:cardElevation="20dp"
+                android:layout_below="@+id/pie_chart_cardView" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@color/teal_200"
+                        android:layout_marginStart="20dp"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/totalTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Cases"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="120dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

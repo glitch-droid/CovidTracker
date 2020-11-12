@@ -13,8 +13,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView userName;
-    Button out;
     FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,17 +21,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String str = intent.getStringExtra("username");
 
-        userName  =findViewById(R.id.textView);
-        userName.setText(str);
-
-        out = findViewById(R.id.signOut);
         mAuth = FirebaseAuth.getInstance();
-        out.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAuth.signOut();
-            }
-        });
-
     }
 }
