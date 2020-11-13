@@ -11,16 +11,16 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Objects;
 
-public class HomeFragment extends Fragment {
+public class    ProfileFragment extends Fragment {
 
-    public HomeFragment(){
+    public ProfileFragment(){
 
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Objects.requireNonNull(getActivity()).setTitle("Home");
-        return inflater.inflate(R.layout.home_fragment_layout,container,false);
+        Objects.requireNonNull(getActivity()).setTitle("Profile");
+        return inflater.inflate(R.layout.profile_fragment_layout,container,false);
     }
 }

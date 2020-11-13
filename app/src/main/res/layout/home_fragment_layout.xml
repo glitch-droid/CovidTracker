@@ -39,7 +39,7 @@
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/pie_chart_cardView"
                 android:layout_width="300dp"
                 android:layout_height="260dp"
@@ -47,22 +47,30 @@
                 android:layout_marginTop="30dp"
                 android:rotationY="0"
                 app:cardCornerRadius="20dp"
+                android:background="@color/white"
                 app:cardElevation="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="1">
 
                 <org.eazegraph.lib.charts.PieChart
                     android:id="@+id/pieChart"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="40dp" />
-            </com.google.android.material.card.MaterialCardView>
+                    android:layout_weight="1"
+                    android:padding="10dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/pie_chart_details_cardView"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/pie_chart_cardView"
                 android:layout_marginTop="30dp"
                 app:cardCornerRadius="20dp"
+                android:background="@color/white"
                 app:cardElevation="20dp">
 
                 <LinearLayout
@@ -168,14 +176,15 @@
                     </LinearLayout>
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="300dp"
                 android:layout_height="420dp"
                 android:layout_below="@id/pie_chart_details_cardView"
                 android:layout_marginTop="43dp"
                 android:layout_marginBottom="100dp"
+                android:background="@color/white"
                 android:rotationX="0"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="20dp">
@@ -203,13 +212,14 @@
 
                         <TextView
                             android:id="@+id/casesNumber"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="130dp"
+                            android:layout_marginEnd="10dp"
                             android:fontFamily="@font/quicksand_bold"
                             android:text="20000"
                             android:textSize="18sp"
-                            android:textAlignment="textEnd"
+                            android:textAlignment="viewEnd"
                             android:textColor="@color/Primary" />
 
                     </LinearLayout>
@@ -232,11 +242,13 @@
 
                         <TextView
                             android:id="@+id/recoveredNumber"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="130dp"
+                            android:layout_marginEnd="10dp"
                             android:fontFamily="@font/quicksand_bold"
                             android:text="50000"
+                            android:textAlignment="viewEnd"
                             android:textSize="18sp"
                             android:textColor="@color/Primary" />
 
@@ -259,13 +271,14 @@
 
                         <TextView
                             android:id="@+id/criticalNumber"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="130dp"
+                            android:layout_marginEnd="10dp"
                             android:fontFamily="@font/quicksand_bold"
                             android:text="20000"
                             android:textSize="18sp"
-                            android:textAlignment="textEnd"
+                            android:textAlignment="viewEnd"
                             android:textColor="@color/Primary" />
 
                     </LinearLayout>
@@ -287,13 +300,14 @@
 
                         <TextView
                             android:id="@+id/activeNumber"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="130dp"
+                            android:layout_marginEnd="10dp"
                             android:fontFamily="@font/quicksand_bold"
                             android:text="20000"
                             android:textSize="18sp"
-                            android:textAlignment="textEnd"
+                            android:textAlignment="viewEnd"
                             android:textColor="@color/Primary" />
 
                     </LinearLayout>
@@ -315,13 +329,14 @@
 
                         <TextView
                             android:id="@+id/todayCasesNumber"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="130dp"
+                            android:layout_marginEnd="10dp"
                             android:fontFamily="@font/quicksand_bold"
                             android:text="20000"
                             android:textSize="18sp"
-                            android:textAlignment="textEnd"
+                            android:textAlignment="viewEnd"
                             android:textColor="@color/Primary" />
 
                     </LinearLayout>
@@ -343,13 +358,14 @@
 
                         <TextView
                             android:id="@+id/todayDeathsNumber"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="130dp"
+                            android:layout_marginEnd="10dp"
                             android:fontFamily="@font/quicksand_bold"
                             android:text="20000"
                             android:textSize="18sp"
-                            android:textAlignment="textEnd"
+                            android:textAlignment="viewEnd"
                             android:textColor="@color/Primary" />
 
                     </LinearLayout>
@@ -371,13 +387,14 @@
 
                         <TextView
                             android:id="@+id/totalDeathsNumber"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="130dp"
+                            android:layout_marginEnd="10dp"
                             android:fontFamily="@font/quicksand_bold"
                             android:text="20000"
                             android:textSize="18sp"
-                            android:textAlignment="textEnd"
+                            android:textAlignment="viewEnd"
                             android:textColor="@color/Primary" />
 
                     </LinearLayout>
@@ -399,13 +416,14 @@
 
                         <TextView
                             android:id="@+id/countriesNumber"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="130dp"
+                            android:layout_marginEnd="10dp"
                             android:fontFamily="@font/quicksand_bold"
-                            android:text="20000"
+                            android:text="2004400"
                             android:textSize="18sp"
-                            android:textAlignment="textEnd"
+                            android:textAlignment="viewEnd"
                             android:textColor="@color/Primary" />
 
                     </LinearLayout>
@@ -414,7 +432,7 @@
 
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
 
         </RelativeLayout>

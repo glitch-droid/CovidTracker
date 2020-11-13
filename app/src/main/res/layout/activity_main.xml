@@ -13,15 +13,17 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="25dp"
             android:background="@drawable/rounded_bottom_nav"
+            app:itemIconTint="@drawable/bottom_navbar_color_selector"
             android:elevation="8dp"
             app:menu="@menu/bottom_nav"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             app:labelVisibilityMode="unlabeled"/>
         <FrameLayout
             android:id="@+id/fragment_container"
