@@ -5,74 +5,160 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadeScrollbars="true">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/signup_bgr"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/signupText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SIGNUP"
-            android:textSize="36sp"
-            android:layout_marginTop="30dp"
+            android:fontFamily="@font/bree_serif"
+            android:textColor="@color/teal_700"
+            android:textSize="60sp"
+            android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/welcomeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="320dp"
+            android:fontFamily="@font/coda"
+            android:text="Welcome!"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="357dp"
+            android:fontFamily="@font/coda"
+            android:text="Let's create an account for you"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/tfContainerLinearLayout"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/welcomeTV"
+            android:layout_width="340dp"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
         <EditText
             android:id="@+id/editTextEmail2"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="50dp"
             android:textColor="@color/white"
             android:layout_below="@+id/signupText"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="20dp"
             android:inputType="textEmailAddress"
+            android:drawableEnd="@drawable/emial_s_icon"
             android:ems="10"
+            android:paddingStart="10dp"
+            android:elevation="10dp"
+            android:paddingEnd="10dp"
+            android:background="@drawable/text_fileds_signup_bgr"
             android:layout_centerHorizontal="true"
             android:hint="Email"/>
 
         <EditText
             android:id="@+id/editTextUsername"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_below="@+id/editTextEmail2"
             android:layout_marginTop="30dp"
+            android:drawableEnd="@drawable/account_s_icon"
             android:textColor="@color/white"
             android:inputType="textPersonName"
             android:ems="10"
+            android:paddingStart="10dp"
+            android:elevation="10dp"
+            android:paddingEnd="10dp"
+            android:background="@drawable/text_fileds_signup_bgr"
             android:layout_centerHorizontal="true"
             android:hint="Username"/>
 
         <EditText
             android:id="@+id/editTextPassword2"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_below="@+id/editTextUsername"
             android:layout_marginTop="30dp"
             android:inputType="textPassword"
             android:textColor="@color/white"
             android:ems="10"
+            android:elevation="10dp"
+            android:paddingStart="10dp"
+            android:drawableEnd="@drawable/unlock_s_icon"
+            android:paddingEnd="10dp"
+            android:background="@drawable/text_fileds_signup_bgr"
             android:layout_centerHorizontal="true"
             android:hint="Password"/>
         <EditText
             android:id="@+id/editTextConfirmPassword"
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_below="@+id/editTextPassword2"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
             android:inputType="textPassword"
             android:textColor="@color/white"
+            android:elevation="10dp"
             android:ems="10"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:drawableEnd="@drawable/lock_s_icon"
+            android:background="@drawable/text_fileds_signup_bgr"
             android:layout_centerHorizontal="true"
             android:hint="Confirm Password"/>
+        </LinearLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/registerButton"
             android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_below="@id/signupText"
-            android:layout_marginTop="420dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/tfContainerLinearLayout"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
             android:layout_centerHorizontal="true"
+            android:background="@drawable/signup_button_bgr"
             android:text="Signup"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account ?"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_below="@+id/registerButton"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"/>
 
+        <TextView
+            android:id="@+id/loginTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login here"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/registerButton"
+            android:layout_marginTop="28dp"
+            android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
