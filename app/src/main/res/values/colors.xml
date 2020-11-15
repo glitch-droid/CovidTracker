@@ -13,12 +13,15 @@
     <color name="pie_chart_red">#fc0303</color>
     <color name="pie_chart_green">#8BC34A</color>
     <color name="pie_chart_blue">#0873ff</color>
-    
-    <color name="Primary">#FF7077</color>
-    <color name="PrimaryDark">#660005</color>
-    <color name="PrimaryDark2">#FF486A</color>
-    <color name="Primary2">#FFB067</color>
-    <color name="Secondary">#FFE9E4</color>
+
+    <color name="primary">#FF5722</color>
+    <color name="primary_dark">#E64A19</color>
+    <color name="primary_light">#FFCCBC</color>
+    <color name="accent">#607D8B</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
 
 
 </resources>
