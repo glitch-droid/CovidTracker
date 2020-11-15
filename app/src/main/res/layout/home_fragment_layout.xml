@@ -39,6 +39,14 @@
                 android:textSize="46sp"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/GlobalStatsTextView"
+                android:src="@drawable/stats_icon"
+                android:layout_marginStart="-200dp"
+                android:layout_marginTop="135dp"/>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/pie_chart_cardView"
                 android:layout_width="380dp"

@@ -51,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.profile_icon:
                         container = new ProfileFragment(userName);
                         break;
+                    case R.id.world_icon:
+                        container  = new AffectedCountriesFragment();
+                        break;
                     default:
                         break;
 
