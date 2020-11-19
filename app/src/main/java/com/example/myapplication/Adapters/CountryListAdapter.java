@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,9 +20,9 @@ import java.util.List;
 
 public class CountryListAdapter extends  RecyclerView.Adapter<CountryListAdapter.ViewHolder>{
 
-    private List<CountryModel> countryModelList;
+    private  List<CountryModel> countryModelList;
     private List<CountryModel> countryModelListFiltered;
-    private Context context;
+    private  Context context;
 
     public CountryListAdapter(List<CountryModel> countryModelList, Context context) {
         this.countryModelList = countryModelList;
@@ -56,12 +57,10 @@ public class CountryListAdapter extends  RecyclerView.Adapter<CountryListAdapter
 
         ImageView countryFlag;
         TextView countryName;
-        RelativeLayout parentLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             countryFlag = itemView.findViewById(R.id.flag_imageView);
             countryName = itemView.findViewById(R.id.countryNameTextView);
-            parentLayout = itemView.findViewById(R.id.list_item_layout);
         }
     }
 
