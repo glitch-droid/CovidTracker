@@ -23,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
+import com.example.myapplication.Models.RegisterUser;
+
 public class Signup extends AppCompatActivity {
 
     EditText name, email, password, confirmPassword;
@@ -39,7 +41,7 @@ public class Signup extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        Objects.requireNonNull(getSupportActionBar()).hide();
+
         name = findViewById(R.id.editTextUsername);
         email = findViewById(R.id.editTextEmail2);
         password  = findViewById(R.id.editTextPassword2);

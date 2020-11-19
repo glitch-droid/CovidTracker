@@ -5,11 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
+import com.example.myapplication.Models.RegisterUser;
+
 public class Login extends AppCompatActivity {
 
     EditText email, password;
@@ -45,8 +44,6 @@ public class Login extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Objects.requireNonNull(getSupportActionBar()).hide();
-
 
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
