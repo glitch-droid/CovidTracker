@@ -4,66 +4,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login_bgr"
     tools:context=".Login">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <TextView
         android:id="@+id/loginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
-        android:textSize="36sp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true"/>
+        android:fontFamily="@font/bree_serif"
+        android:text="LOGIN"
+        android:textColor="@color/purple_300"
+        android:textSize="60sp" />
+
+    <TextView
+        android:id="@+id/hellotv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        android:fontFamily="@font/coda"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:text="Hello!"
+        android:textColor="@color/black" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hellotv"
+        android:text="Let us log you into your account"
+        android:fontFamily="@font/coda"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"/>
+
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="250dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:elevation="10dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:textColor="@color/white"
-        android:layout_below="@+id/loginText"
-        android:layout_marginTop="70dp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/hellotv"
+        android:drawableEnd="@drawable/email_icon"
+        android:layout_marginTop="60dp"
         android:inputType="textEmailAddress"
+        android:background="@drawable/login_textfields_bgr"
         android:ems="10"
         android:layout_centerHorizontal="true"
         android:hint="Email"/>
+
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="250dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:textColor="@color/white"
+        android:elevation="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/black"
         android:layout_below="@+id/editTextEmail"
         android:layout_marginTop="30dp"
         android:inputType="textEmailAddress"
+        android:background="@drawable/login_textfields_bgr"
         android:ems="10"
+        android:drawableEnd="@drawable/unlock_icon"
         android:layout_centerHorizontal="true"
         android:hint="Password"/>
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/loginButton"
         android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_below="@id/loginText"
-        android:layout_marginTop="250dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
+        android:background="@drawable/login_button_bgr"
         android:layout_centerHorizontal="true"
         android:text="Login"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginButton"
-        android:layout_marginTop="15dp"
-        android:text="OR"
-        android:textSize="28sp"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true"/>
-    <Button
-        android:id="@+id/signupButton"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_below="@id/loginText"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         android:layout_centerHorizontal="true"
-        android:text="Signup"/>
+        android:text="Not yet registered ?"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginButton"
+        android:layout_marginTop="55dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginStart="120dp"
+        android:text="Don't worry, "/>
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginButton"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="55dp"
+        android:text="Signup"
+        android:textColor="@color/purple_200"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginButton"
+        android:layout_marginStart="267dp"
+        android:layout_marginTop="55dp"
+        android:text="here"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        />
 
 
 </RelativeLayout>

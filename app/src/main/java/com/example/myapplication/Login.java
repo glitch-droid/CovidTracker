@@ -2,13 +2,14 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,10 +23,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
+import com.example.myapplication.Models.RegisterUser;
+
 public class Login extends AppCompatActivity {
 
     EditText email, password;
-    Button loginButton,signupButton;
+    Button loginButton;
+    TextView signupButton;
     String TAG = "Covid";
 
     //Firebase variables
@@ -35,13 +41,14 @@ public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
         loginButton = findViewById(R.id.loginButton);
-        signupButton = findViewById(R.id.signupButton);
+        signupButton = findViewById(R.id.tvRegister);
 
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");

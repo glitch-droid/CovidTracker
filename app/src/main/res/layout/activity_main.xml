@@ -11,37 +11,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <Button
-        android:id="@+id/signOut"
-        android:layout_width="200dp"
-        android:layout_below="@+id/textView"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:text="LOG OUT"/>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif-medium"
-        android:text="TextView"
-        android:textColor="#E91E63"
-        android:textSize="39sp" />
-
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/rounded_bottom_nav"
+            android:layout_height="50dp"
+            app:itemIconTint="@drawable/bottom_navbar_color_selector"
             android:elevation="8dp"
+            android:background="@drawable/rounded_bottom_nav"
             app:menu="@menu/bottom_nav"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             app:labelVisibilityMode="unlabeled"/>
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

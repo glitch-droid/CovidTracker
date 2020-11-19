@@ -34,6 +34,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc03"
     testImplementation 'junit:junit:4.+'
 
     //Firebase dependencies
@@ -46,7 +48,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
 
     //Graphs Dependencies
-    implementation 'com.github.blackfizz:eazegraph:1.2.2@aar'
+    implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
     implementation 'com.nineoldandroids:library:2.4.0'
 
     //Volley for Networking
@@ -59,6 +61,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
+    //CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
     
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
