@@ -1,5 +1,6 @@
 package com.example.myapplication.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
+import com.example.myapplication.Registration.Login;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -52,6 +54,8 @@ public class    ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                     mAuth.signOut();
+                    startActivity(new Intent(getContext(), Login.class));
+                    getActivity().finish();
             }
         });
         return v;

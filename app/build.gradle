@@ -46,6 +46,7 @@ dependencies {
 
     //UI dependencies
     implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.gpfreetech:Awesome-neumorphism:1.0.1'
 
     //Graphs Dependencies
     implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
