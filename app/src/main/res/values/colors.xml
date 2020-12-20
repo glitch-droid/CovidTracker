@@ -24,5 +24,10 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
 
+    <color name="pie_chart_blue_light">#99c5ff</color>
+    <color name="pie_chart_red_light">#ffa6a6</color>
+    <color name="pie_chart_green_light">#baffcb</color>
+    <color name="pie_chart_yellow_light">#fdff96</color>
+
 
 </resources>
