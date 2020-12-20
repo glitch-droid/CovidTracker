@@ -24,17 +24,19 @@ public class CountryListAdapter extends  RecyclerView.Adapter<CountryListAdapter
     private List<CountryModel> countryModelListFiltered;
     private  Context context;
     private RecyclerView.OnItemTouchListener mListener;
+    private OnClicked mOnClicked;
 
-    public CountryListAdapter(List<CountryModel> countryModelList, Context context) {
+    public CountryListAdapter(List<CountryModel> countryModelList, Context context, OnClicked onClicked) {
         this.countryModelList = countryModelList;
         this.context = context;
+        this.mOnClicked = onClicked;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view  = LayoutInflater.from(parent.getContext()).inflate(R.layout.country_list_item_layout,parent,false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, mOnClicked);
     }
 
     @Override
@@ -55,15 +57,28 @@ public class CountryListAdapter extends  RecyclerView.Adapter<CountryListAdapter
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         ImageView countryFlag;
         TextView countryName;
-        public ViewHolder(@NonNull View itemView) {
+        OnClicked onClicked;
+        public ViewHolder(@NonNull View itemView, OnClicked onClicked) {
             super(itemView);
             countryFlag = itemView.findViewById(R.id.flag_imageView);
             countryName = itemView.findViewById(R.id.countryNameTextView);
+            this.onClicked = onClicked;
+
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onClicked.onCountryClicked(getAdapterPosition());
+        }
+    }
+
+    public interface OnClicked{
+        void onCountryClicked(int position);
     }
 
 }

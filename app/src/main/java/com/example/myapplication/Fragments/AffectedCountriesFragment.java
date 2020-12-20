@@ -1,6 +1,7 @@
 package com.example.myapplication.Fragments;
 
 import android.app.VoiceInteractor;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.myapplication.Adapters.CountryListAdapter;
+import com.example.myapplication.Details;
 import com.example.myapplication.Models.CountryModel;
 import com.example.myapplication.R;
 
@@ -31,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class AffectedCountriesFragment extends Fragment {
+public class AffectedCountriesFragment extends Fragment implements CountryListAdapter.OnClicked{
     public static List<CountryModel> countryList = new ArrayList<>();
     List<CountryModel> countryListFiltered;
     RecyclerView recyclerView;
@@ -49,8 +51,6 @@ public class AffectedCountriesFragment extends Fragment {
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         fetchData();
-
-
 
         return v;
     }
@@ -79,7 +79,7 @@ public class AffectedCountriesFragment extends Fragment {
 
                     countryList.add(new CountryModel(flag,country,cases,todayCases,recovered,active,critical,deaths,todayDeaths,tests));
                 }
-                myAdapter = new CountryListAdapter(countryList,getContext());
+                myAdapter = new CountryListAdapter(countryList,getContext(),this);
                 recyclerView.setAdapter(myAdapter);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -90,9 +90,17 @@ public class AffectedCountriesFragment extends Fragment {
                 },error -> {
             Toast.makeText(getActivity(), "Error occurred", Toast.LENGTH_SHORT).show();
         });
-        RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
+        RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
         requestQueue.add(request);
 
     }
 
+    @Override
+    public void onCountryClicked(int position) {
+        Intent intent = new Intent(getContext(),Details.class);
+        CountryModel cModel = countryList.get(position);
+        intent.putExtra("Country",cModel);
+        startActivity(intent);
+
+    }
 }

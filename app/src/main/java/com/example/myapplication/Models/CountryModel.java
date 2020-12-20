@@ -1,6 +1,8 @@
 package com.example.myapplication.Models;
 
-public class CountryModel {
+import java.io.Serializable;
+
+public class CountryModel implements Serializable {
     private String flag, country, cases, todayCases, recovered, active, critical, deaths, todayDeaths, tests;
 
     public CountryModel() {
