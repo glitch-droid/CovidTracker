@@ -160,7 +160,7 @@
                     android:layout_marginTop="15dp"
                     android:orientation="vertical" >
                     <TextView
-                        android:text="Cases"
+                        android:text="Critical"
                         android:textColor="@color/purple_700"
                         android:fontFamily="@font/quicksand_medium"
                         android:textAlignment="center"
