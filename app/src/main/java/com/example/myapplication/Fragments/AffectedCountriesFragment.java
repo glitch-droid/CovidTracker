@@ -50,6 +50,8 @@ public class AffectedCountriesFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         fetchData();
 
+
+
         return v;
     }
 
@@ -90,5 +92,7 @@ public class AffectedCountriesFragment extends Fragment {
         });
         RequestQueue requestQueue = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
         requestQueue.add(request);
+
     }
+
 }

@@ -23,6 +23,7 @@ public class CountryListAdapter extends  RecyclerView.Adapter<CountryListAdapter
     private  List<CountryModel> countryModelList;
     private List<CountryModel> countryModelListFiltered;
     private  Context context;
+    private RecyclerView.OnItemTouchListener mListener;
 
     public CountryListAdapter(List<CountryModel> countryModelList, Context context) {
         this.countryModelList = countryModelList;
@@ -46,6 +47,7 @@ public class CountryListAdapter extends  RecyclerView.Adapter<CountryListAdapter
         holder.countryName.setText(countryModelList.get(position).getCountry());
 
     }
+
 
     @Override
     public int getItemCount() {
