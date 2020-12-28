@@ -3,6 +3,8 @@ package com.example.myapplication.Fragments;
 import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,10 +37,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class AffectedCountriesFragment extends Fragment implements CountryListAdapter.OnClicked{
-    public static List<CountryModel> countryList = new ArrayList<>();
-    List<CountryModel> countryListFiltered;
+    List<CountryModel> countryList = new ArrayList<>();
     RecyclerView recyclerView;
-    EditText nameTextView;
+    SearchView searchView;
     CountryListAdapter myAdapter;
     public AffectedCountriesFragment(){
 
@@ -46,14 +48,29 @@ public class AffectedCountriesFragment extends Fragment implements CountryListAd
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.afffected_countries_layout,container,false);
-        nameTextView = v.findViewById(R.id.countryEditText);
+
         recyclerView = v.findViewById(R.id.countriesListRecyclerView);
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        searchView = v.findViewById(R.id.countrySearch);
         fetchData();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                myAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
 
         return v;
     }
+
 
     private void fetchData(){
         String url = "https://disease.sh/v3/covid-19/countries";

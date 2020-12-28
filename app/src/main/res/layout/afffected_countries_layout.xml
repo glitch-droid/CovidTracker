@@ -20,8 +20,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/countryEditText"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/countrySearch"
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:layout_marginTop="126dp"
@@ -47,7 +47,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countryEditText"
+        app:layout_constraintTop_toBottomOf="@+id/countrySearch"
         app:layout_constraintVertical_bias="0.0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout
+   >

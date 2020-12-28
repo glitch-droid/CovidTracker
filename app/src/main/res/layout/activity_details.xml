@@ -86,7 +86,7 @@
                     android:orientation="vertical"
                     android:layout_marginStart="20dp"
                     android:layout_toRightOf="@+id/layoutCases"
-                    android:background="@color/pie_chart_green_light">
+                    android:background="@drawable/recovered_bgr">
                     <TextView
                         android:text="Recovered"
                         android:textColor="@color/teal_700"
@@ -121,7 +121,7 @@
                     android:orientation="vertical"
                     android:padding="10dp"
                     android:layout_marginTop="15dp"
-                    android:background="@color/pie_chart_red_light">
+                    android:background="@drawable/active_bgr">
                     <TextView
                         android:text="Active"
                         android:textColor="@color/pie_chart_red"
@@ -156,7 +156,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_toRightOf="@+id/layoutActive"
                     android:layout_below="@+id/layoutRecovered"
-                    android:background="@color/purple_200"
+                    android:background="@drawable/critical_bgr"
                     android:layout_marginTop="15dp"
                     android:orientation="vertical" >
                     <TextView
@@ -193,7 +193,7 @@
                         android:orientation="vertical"
                         android:layout_marginTop="15dp"
                         android:padding="10dp"
-                        android:background="@color/accent">
+                        android:background="@drawable/deaths_bgr">
                         <TextView
                             android:text="Deaths"
                             android:textColor="@color/black"
@@ -228,7 +228,7 @@
                         android:layout_marginStart="20dp"
                         android:layout_toRightOf="@+id/layoutDeaths"
                         android:layout_below="@+id/layoutCritical"
-                        android:background="@color/bottom_nav_color"
+                        android:background="@drawable/tests_bgr"
                         android:layout_marginTop="15dp"
                         android:orientation="vertical" >
                         <TextView
