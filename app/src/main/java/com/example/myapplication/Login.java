@@ -69,8 +69,8 @@ public class Login extends AppCompatActivity {
 
     }
 
-    void loginUser(){
-        final String emailId=email.getText().toString();
+    private void loginUser(){
+        String emailId=email.getText().toString();
         String pass=password.getText().toString();
 
         if(!emailId.equals("")&&!pass.equals("")){
@@ -91,7 +91,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    void searchUser(String userId){
+    private void searchUser(String userId){
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -106,22 +106,13 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    void launchMainActivity(String email, String name){
-        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+    private void launchMainActivity(String email, String name){
+        Intent intent = new Intent(this,MainActivity.class);
         intent.putExtra("email",email);
         intent.putExtra("username",name);
-        finish();
         startActivity(intent);
+        finish();
     }
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (currentUser!=null){
-            Toast.makeText(getApplicationContext(),"Wait.... Logging you in",Toast.LENGTH_SHORT).show();
-            searchUser(currentUser.getUid());
-        }
-    }
 }

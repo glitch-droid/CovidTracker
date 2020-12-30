@@ -1,5 +1,6 @@
 package com.example.myapplication.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ public class    ProfileFragment extends Fragment {
 
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
+    private Context mContext;
     Button button;
     String userUid;
 
@@ -42,7 +44,6 @@ public class    ProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Objects.requireNonNull(getActivity()).setTitle("Profile");
         mAuth = FirebaseAuth.getInstance();
         View v = inflater.inflate(R.layout.profile_fragment_layout,
                 container, false);
@@ -55,6 +56,12 @@ public class    ProfileFragment extends Fragment {
             }
         });
         return v;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mContext = context;
     }
 
 }

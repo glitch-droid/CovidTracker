@@ -107,7 +107,7 @@ public class AffectedCountriesFragment extends Fragment implements CountryListAd
                 },error -> {
             Toast.makeText(getActivity(), "Error occurred", Toast.LENGTH_SHORT).show();
         });
-        RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(request);
 
     }

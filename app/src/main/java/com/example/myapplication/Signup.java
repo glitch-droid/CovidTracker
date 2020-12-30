@@ -95,9 +95,10 @@ public class Signup extends AppCompatActivity {
                                 final FirebaseUser user=task.getResult().getUser();
                                 Log.i("TEST", user.getUid());
                                 makeUser(userObj, user.getUid());
-                                Intent intent=new Intent(getApplicationContext(),Login.class);
-                                finish();
+                                Intent intent=new Intent(getApplicationContext() ,MainActivity.class);
                                 startActivity(intent);
+                                finish();
+
                             }else{
                                 Toast.makeText(getApplicationContext(),"An unexpected error occured! Please try again",Toast.LENGTH_LONG).show();
                             }
